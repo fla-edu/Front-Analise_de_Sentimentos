@@ -1,0 +1,14 @@
+<div class="Toolbar">
+  <span>Sistema do Neto</span>
+  <input [(ngModel)]="searchWord" type="text">
+  <button (click)="search()">Pesquisar</button>
+</div>
+
+<div class="Itens">
+  <app-itens *ngFor="let item of itens"
+    [name]="item.Nome"
+    [image]="item.Img"
+    [price]="item.Preco"
+    [stores]="item.Lojas"
+  ></app-itens>
+</div>
