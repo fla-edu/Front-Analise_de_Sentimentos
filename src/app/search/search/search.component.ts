@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WebserviceService } from '../../services/webservice.service';
-import { IItens, Itens } from '../interfaces/IItens';
+import { WebserviceService } from '../../../services/webservice.service';
+import { IItens } from '../../interfaces/IItens';
 
 @Component({
   selector: 'app-search',
@@ -19,8 +19,7 @@ export class SearchComponent implements OnInit {
   }
 
   async search() {
-    this.itens = await this.ws.searchWord(this.searchWord);
-    console.log(this.itens)
+    this.itens = await this.ws.busca(this.searchWord);
   }
 
 }

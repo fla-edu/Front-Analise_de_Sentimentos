@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'assets/styles/themeVariables';
+@import 'assets/styles/tableStyles.scss';
+
 html, body { 
   padding: 0; 
   margin: 0; 
@@ -8,3 +12,5 @@ html, body {
 button, input {
   font-family: 'Montserrat', sans-serif;
 }
+
+

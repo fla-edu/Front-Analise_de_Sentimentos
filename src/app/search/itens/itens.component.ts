@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-itens',
@@ -8,12 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ItensComponent implements OnInit {
 
   @Input() name: string = ''
+  @Input() url: string = ''
   @Input() image: string = ''
   @Input() price: string = ''
   @Input() stores: string = ''
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  verProduto() {
+    this.router.navigateByUrl(`/product?url=${this.url}&stores=${this.stores}`);
   }
 
 }

@@ -1,0 +1,180 @@
+<div class="Toolbar">
+  <span>Sistema do Neto</span>
+  <input type="text">
+  <button >Pesquisar</button>
+</div>
+
+<div class="Infos">
+  <div class="Sides">
+
+    <div class="Data Divider">Informações Técnicas</div>
+
+    <div class="Data Divider">
+      <h1 class="Title">Correlação de Notas - Reviewer - Computado</h1>
+      <table>
+        <thead>
+          <tr>
+            <th id="1">Usuário</th>
+            <th id="2">Pontuação</th>
+            <th id="3">Sistema</th>
+            <th id="4">Pontuação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1 -->
+          <tr> 
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Usuario_1 }}</td>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Sistema_1 }}</td>
+          </tr>
+          <!-- 2 -->
+          <tr>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Usuario_2 }}</td>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Sistema_2 }}</td>
+          </tr>
+          <!-- 3 -->
+          <tr>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Usuario_3 }}</td>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Sistema_3 }}</td>
+          </tr>
+          <!-- 4 -->
+          <tr>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Usuario_4 }}</td>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Sistema_4 }}</td>
+          </tr>
+          <!-- 5 -->
+          <tr>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Usuario_5 }}</td>
+            <td>
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+              <img src="../../../assets/images/star.png" alt="star">
+            </td>
+            <td>{{ stars.Nota_Sistema_5 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Data Divider">
+      <h1 class="Title">Principais Comentarios Positivos e Negativos - Algoritmo NMF</h1>
+      <table>
+        <thead>
+          <tr>
+            <th id="P1">Positivos</th>
+            <th id="P2">Negativos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comment of pontosNMF">
+            <td class="Ponto_Positivo">{{ comment.Positivo }}</td>
+            <td class="Ponto_Negativo">{{ comment.Negativo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Data Divider">
+      <h1 class="Title">Principais Comentarios Positivos e Negativos - Quantidade de Ocorrências</h1>
+      <table>
+        <thead>
+          <tr>
+            <th id="P1">Positivos</th>
+            <th id="P2">Negativos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comment of comentariosOcorrencia">
+            <td class="Ponto_Positivo">{{ comment.Positivo }}</td>
+            <td class="Ponto_Negativo">{{ comment.Negativo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Data Divider">
+      <h1 class="Title">Polaridade dos Comentários</h1>
+      <div echarts [options]="chartOption" class="polaridade-chart"></div>
+      <span class="Comentario Comentario_Positivo" *ngIf="polaridade.Comentario_Positivo != ''">
+        <strong>Comentário Positivo:</strong> {{ polaridade.Comentario_Positivo }}
+      </span>
+      <span class="Comentario Comentario_Negativo" *ngIf="polaridade.Comentario_Negativo != ''" >
+        <strong>Comentário Negativo:</strong> {{ polaridade.Comentario_Negativo }}
+      </span>
+    </div>
+
+    <div class="Data Divider IndicacaoLojas">
+      <h1 class="Title">Indicação de Lojas - Pontos Analisados</h1>
+      <table>
+        <thead>
+          <tr>
+            <th id="L0">Posicao</th>
+            <th id="L1">Preço</th>
+            <th id="L2">Entrega</th>
+            <th id="L3">Atendimento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let loja of lojas">
+            <td>{{ loja.Posicao }}</td>
+            <td>{{ loja.Preco }}</td>
+            <td>{{ loja.Entrega }}</td>
+            <td>{{ loja.Atendimento }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="Data">
+      <h1 class="Title">Análise Final dos Produtos</h1>
+      <span>Com relação as análises executadas dentre os comentários das lojas analisadas,
+        esse produto é indicado para a compra. Dentre a média, é um bom produto.
+      </span>
+    </div>
+
+  </div>
+</div>

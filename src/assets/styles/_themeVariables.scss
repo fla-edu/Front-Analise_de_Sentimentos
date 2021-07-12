@@ -1,0 +1,95 @@
+
+// Color Primary
+$primary-color-100: #DAF9F7;
+$primary-color-200: #B8F3F4;
+$primary-color-300: #8CD7DE;
+$primary-color-400: #66B0BE;
+$primary-color-500: #397F94;
+$primary-color-600: #29657F;
+$primary-color-700: #1C4D6A;
+$primary-color-800: #123755;
+$primary-color-900: #0A2747;
+$primary-color-transparent-100: rgba(133, 105, 93, 0.08);
+$primary-color-transparent-200: rgba(133, 105, 93, 0.16);
+$primary-color-transparent-300: rgba(133, 105, 93, 0.24);
+$primary-color-transparent-400: rgba(133, 105, 93, 0.32);
+$primary-color-transparent-500: rgba(133, 105, 93, 0.4);
+$primary-color-transparent-600: rgba(133, 105, 93, 0.48);
+
+// Success-color
+$success-color-100: #E9F8F1;
+$success-color-200: #D5F2E6;
+$success-color-300: #B2DACD;
+$success-color-400: #8CB5AB;
+$success-color-500: #5D857F;
+$success-color-600: #43726F;
+$success-color-700: #2E5D5F;
+$success-color-800: #1D464D;
+$success-color-900: #11353F;
+$success-color-transparent-100: rgba(93, 133, 127, 0.08);
+$success-color-transparent-200: rgba(93, 133, 127, 0.16);
+$success-color-transparent-300: rgba(93, 133, 127, 0.24);
+$success-color-transparent-400: rgba(93, 133, 127, 0.32);
+$success-color-transparent-500: rgba(93, 133, 127, 0.4);
+$success-color-transparent-600: rgba(93, 133, 127, 0.48);
+
+// Info-color = Secondary
+$secondary-color-100: #DAF9F7;
+$secondary-color-200: #B8F3F4;
+$secondary-color-300: #8CD7DE;
+$secondary-color-400: #66B0BE;
+$secondary-color-500: #397F94;
+$secondary-color-600: #29657F;
+$secondary-color-700: #1C4D6A;
+$secondary-color-800: #123755;
+$secondary-color-900: #0A2747;
+$secondary-color-transparent-100: rgba(255, 244, 240, 0.08);
+$secondary-color-transparent-200: rgba(255, 244, 240, 0.16);
+$secondary-color-transparent-300: rgba(255, 244, 240, 0.24);
+$secondary-color-transparent-400: rgba(255, 244, 240, 0.32);
+$secondary-color-transparent-500: rgba(255, 244, 240, 0.4);
+$secondary-color-transparent-600: rgba(255, 244, 240, 0.48);
+
+// Warning-color = Tertiary
+$tertiary-color-100: #FCF8F2;
+$tertiary-color-200: #FAF0E6;
+$tertiary-color-300: #F0E0D4;
+$tertiary-color-400: #E2CDC1;
+$tertiary-color-500: #D0B3A7;
+$tertiary-color-600: #B2867A;
+$tertiary-color-700: #955E54;
+$tertiary-color-800: #783B35;
+$tertiary-color-900: #632120;
+$tertiary-color-transparent-100: rgba(208, 179, 167, 0.08);
+$tertiary-color-transparent-200: rgba(208, 179, 167, 0.16);
+$tertiary-color-transparent-300: rgba(208, 179, 167, 0.24);
+$tertiary-color-transparent-400: rgba(208, 179, 167, 0.32);
+$tertiary-color-transparent-500: rgba(208, 179, 167, 0.4);
+$tertiary-color-transparent-600: rgba(208, 179, 167, 0.48);
+
+// Danger-color
+$danger-color-100: #FEECE2;
+$danger-color-200: #FED4C5;
+$danger-color-300: #FEB7A8;
+$danger-color-400: #FD9C92;
+$danger-color-500: #FD6F6F;
+$danger-color-600: #D9515C;
+$danger-color-700: #B6374D;
+$danger-color-800: #922340;
+$danger-color-900: #791537;
+$danger-color-transparent-100: rgba(253, 111, 111, 0.08);
+$danger-color-transparent-200: rgba(253, 111, 111, 0.16);
+$danger-color-transparent-300: rgba(253, 111, 111, 0.24);
+$danger-color-transparent-400: rgba(253, 111, 111, 0.32);
+$danger-color-transparent-500: rgba(253, 111, 111, 0.4);
+$danger-color-transparent-600: rgba(253, 111, 111, 0.48);
+
+
+// Variaveis de tema
+$primary-color: $primary-color-500;
+$secondary-color: $secondary-color-500;
+$tertiary-color: $tertiary-color-500;
+$neutral-color: #fff;
+$danger-color: $danger-color-500;
+$success-color: $success-color-500;
+
