@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { WebserviceService } from '../../../services/webservice.service';
-import { IComentariosOcorrencia, ILojas, ILojasTable, IPolaridade, IPolaridadeComentarios, IPontosNMF, IStars, Polaridade, Stars } from './IProduct';
+import { ILojas, ILojasTable, IPolaridade, IPolaridadeComentarios, IPontosNMF, IStars, Polaridade, Stars } from './IProduct';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -17,19 +18,40 @@ export class ProductComponent implements OnInit {
   pontosNMF: IPolaridadeComentarios[] = []
   comentariosOcorrencia: IPolaridadeComentarios[] = []
   lojas: ILojasTable[] = []
+  analise: any
+  carregou: boolean = false
 
   constructor(
     private ws: WebserviceService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.get()
+  }
+
+  async get() {
+    await this.getAnalise()
     this.getStars()
     this.createEchartOption()
     this.getPolaridade()
     this.getPontosNMF()
     this.getComentariosOcorrencia()
-    this.getLojas()
+    await this.getLojas()
   }
+
+  async getAnalise() {
+    let lojas = ''
+    let url = ''
+    this.route.queryParams.subscribe(params => {
+      lojas = params['lojas'];
+      url = params['url'];
+    });
+
+    this.analise = await this.ws.analise(url, lojas);
+    console.log(this.analise)
+  }
+
 
   async getStars() {
     this.stars = await this.ws.estrelas();
@@ -70,6 +92,8 @@ export class ProductComponent implements OnInit {
         Atendimento: lojas[2].Atendimento[ix]
       })
     })
+
+    this.carregou = true
   }
 
   async getPolaridade() {

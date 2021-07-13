@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class WebserviceService {
-  URL_SERVER: string = 'http://53b67a1320c3.ngrok.io/';
+  URL_SERVER: string = 'http://53d1df1b4791.ngrok.io/';
 
   constructor(private http: HttpClient) { }
 

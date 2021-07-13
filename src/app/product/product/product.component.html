@@ -7,11 +7,13 @@
 <div class="Infos">
   <div class="Sides">
 
-    <div class="Data Divider">Informações Técnicas</div>
+    <div class="Data Divider">
+      <h1 class="Title">Informações Técnicas</h1>
+    </div>
 
     <div class="Data Divider">
       <h1 class="Title">Correlação de Notas - Reviewer - Computado</h1>
-      <table>
+      <table *ngIf="carregou">
         <thead>
           <tr>
             <th id="1">Usuário</th>
@@ -102,7 +104,7 @@
 
     <div class="Data Divider">
       <h1 class="Title">Principais Comentarios Positivos e Negativos - Algoritmo NMF</h1>
-      <table>
+      <table *ngIf="carregou">
         <thead>
           <tr>
             <th id="P1">Positivos</th>
@@ -120,7 +122,7 @@
 
     <div class="Data Divider">
       <h1 class="Title">Principais Comentarios Positivos e Negativos - Quantidade de Ocorrências</h1>
-      <table>
+      <table *ngIf="carregou">
         <thead>
           <tr>
             <th id="P1">Positivos</th>
@@ -138,18 +140,20 @@
 
     <div class="Data Divider">
       <h1 class="Title">Polaridade dos Comentários</h1>
-      <div echarts [options]="chartOption" class="polaridade-chart"></div>
-      <span class="Comentario Comentario_Positivo" *ngIf="polaridade.Comentario_Positivo != ''">
-        <strong>Comentário Positivo:</strong> {{ polaridade.Comentario_Positivo }}
-      </span>
-      <span class="Comentario Comentario_Negativo" *ngIf="polaridade.Comentario_Negativo != ''" >
-        <strong>Comentário Negativo:</strong> {{ polaridade.Comentario_Negativo }}
-      </span>
+      <div *ngIf="carregou">
+        <div echarts [options]="chartOption" class="polaridade-chart"></div>
+        <span class="Comentario Comentario_Positivo" *ngIf="polaridade.Comentario_Positivo != ''">
+          <strong>Comentário Positivo:</strong> {{ polaridade.Comentario_Positivo }}
+        </span>
+        <span class="Comentario Comentario_Negativo" *ngIf="polaridade.Comentario_Negativo != ''" >
+          <strong>Comentário Negativo:</strong> {{ polaridade.Comentario_Negativo }}
+        </span>
+      </div>
     </div>
 
     <div class="Data Divider IndicacaoLojas">
       <h1 class="Title">Indicação de Lojas - Pontos Analisados</h1>
-      <table>
+      <table *ngIf="carregou">
         <thead>
           <tr>
             <th id="L0">Posicao</th>
@@ -171,7 +175,7 @@
 
     <div class="Data">
       <h1 class="Title">Análise Final dos Produtos</h1>
-      <span>Com relação as análises executadas dentre os comentários das lojas analisadas,
+      <span *ngIf="carregou" >Com relação as análises executadas dentre os comentários das lojas analisadas,
         esse produto é indicado para a compra. Dentre a média, é um bom produto.
       </span>
     </div>
