@@ -19,7 +19,7 @@ export class ItensComponent implements OnInit {
   }
 
   verProduto() {
-    this.router.navigateByUrl(`/product?lojas=${this.stores}&url=${this.url}`);
+    this.router.navigateByUrl(`/product?lojas=${this.stores}&img=${this.image}&nome=${this.name}&url=${this.url}`);
   }
 
 }

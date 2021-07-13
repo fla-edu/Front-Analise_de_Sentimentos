@@ -20,6 +20,8 @@ export class ProductComponent implements OnInit {
   lojas: ILojasTable[] = []
   analise: any
   carregou: boolean = false
+  nome: string = ''
+  imagem: string = ''
 
   constructor(
     private ws: WebserviceService,
@@ -46,10 +48,11 @@ export class ProductComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       lojas = params['lojas'];
       url = params['url'];
+      this.imagem = params['img'];
+      this.nome = params['nome'];
     });
 
     this.analise = await this.ws.analise(url, lojas);
-    console.log(this.analise)
   }
 
 
